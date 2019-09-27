@@ -1,0 +1,25 @@
+{% extends "tutorialsite/base.html" %}
+
+{% block title %}
+New exercise
+{% endblock title %}
+
+{% block content %}
+<h1>New Exercise:</h1>
+<form method="POST" class="exercise-form">
+   {% csrf_token %}
+   {{ form.as_p }}
+   <button type="submit" class="save btn btn-primary">Post Exercise</button>
+</form>
+<script>
+   var editor = new MediumEditor('.editable', {
+      toolbar: {
+         buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'image', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'superscript', 'subscript', 'orderedlist', 'unorderedlist', 'pre', 'removeFormat', 'outdent', 'indent', 'h2', 'h3', 'html'],
+      },
+      buttonLabels: 'fontawesome',
+      anchor: {
+         targetCheckbox: true
+      }
+   });
+</script>
+{% endblock content %}

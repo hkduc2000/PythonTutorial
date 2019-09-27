@@ -1,0 +1,22 @@
+{% extends "tutorialsite/base.html" %}
+
+{% block sidebar %}
+<div class="col-4 col-md-4 col-xl-3 bd-sidebar">
+   <div class="title"><b>Table of contents:</b></div>
+   <hr>
+   <nav class="bd-links" id="bd-docs-nav">
+      {% for tag in Tag %}
+      <div class="bd-toc-item">
+         <span class="tag">{{ tag.name }}:</span>
+         <ul class="nav bd-sidenav">
+            {% for post in tag.posts.all %}
+            <li><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></li>
+            {% endfor %}
+         </ul>
+         <hr>
+      </div>
+
+      {% endfor %}
+   </nav>
+</div>
+{% endblock sidebar %}

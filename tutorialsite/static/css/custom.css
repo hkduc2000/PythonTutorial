@@ -1,0 +1,46 @@
+.navbar {
+   font-size: 2em;
+}
+
+.nav {
+   display: block;
+}
+
+.title {
+   font-size: 1.5em;
+}
+
+.tag {
+   font-size: 1.2em;
+}
+
+.verticalline {
+   border-left: 2px solid #247BA0;
+}
+
+#toggleContent {
+   display: none;
+}
+
+blockquote {
+   background-color: #eeffcc;
+   border: 1px solid #ac9;
+}
+
+/* Footer */
+html,
+body {
+   height: 100%;
+}
+
+body {
+   flex-direction: column;
+}
+
+.content {
+   flex: 1 0 auto;
+}
+
+.footer {
+   flex-shrink: 0;
+}

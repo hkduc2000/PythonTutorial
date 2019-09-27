@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>
+      {% block title %}
+      {% endblock title %}
+   </title>
+   <link rel="icon" type="image/png" href="{% static 'images/base/brand.jpg' %}" />
+   <!-- Bootstrap -->
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   
+   <!-- jQuery library -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   
+   <!-- Popper JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   
+   <!-- Latest compiled JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   
+   <!-- Custom css -->
+   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+   <!-- Custom js -->
+   <script src="{% static 'js/custom.js' %}"></script>
+   <!-- Medium Style Editor -->
+   <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css"
+      media="screen" charset="utf-8">
+</head>
+<body>
+   <!-- HEADER -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+   <section class=" align-items-center d-flex bg-dark"
+      style="height:15vmin">
+      <div class="container-fluid">
+         <div class="row justify-content-center align-items-left d-flex text-center h-100">
+            <div class="col-12 col-md-8 h-50">
+               <a href="{% url 'index' %}">
+                  <img style="display:inline-block;" width="100px" src="/static/images/header/header.png" alt="">
+                  <h1 style="display:inline-block;" class="text-light mt-auto mb-auto"><strong>Free Python Tutorial Site</strong> </h1>
+               </a>
+            </div>
+         </div>
+      </div>
+   </section>
+   
+   <!-- NAVBAR -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="nav-item pr-3" href="{% url 'index' %}">Tutorial</a>
+      <a class="nav-item pr-3" href="{% url 'exercise' %}">Exercise</a>
+      <a class="nav-item pr-3" href="">About us</a>
+      <ul class="navbar-nav navbar-right">
+         {% if user.is_authenticated %}
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+               Admin
+            </a>
+            <div class="dropdown-menu bg-light" aria-labelledby="adminDropdown">
+               <a class="dropdown-item" href="{% url 'post_new' %}">New Post</a>
+               <a class="dropdown-item" href="{% url 'exercise_new' %}">New Exercise</a>
+               <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="#"></a>
+            </div>
+         </li>
+         <li class="nav-item"><a class="nav-link">{{user.username}}</a></li>
+         {% endif %}
+      </ul>
+   </nav>
+
+
+
+   <div class="container-fluid row">
+      <!-- SIDEBAR -->
+      {% block sidebar %}
+      {% endblock sidebar %}
+      <!-- CONTENT -->
+      <div class="verticalline col-7 col-md-7 col-xl-8">
+         {% block content %}
+         {% endblock content %}
+      </div>
+   </div>
+   
+   <!-- FOOTER -->
+   <footer id="sticky-footer" class="mt-4 py-4 bg-dark text-white-50">
+      <div class="container text-center">
+         <small>Project CSI101
+            <br>Copyright &copy; Power by HKD</small>
+      </div>
+   </footer>
+</body>
+</html>
