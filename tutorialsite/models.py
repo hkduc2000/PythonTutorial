@@ -40,6 +40,10 @@ class Exercise(models.Model):
    title = models.CharField(max_length=200)
    text = models.TextField()
    solution = models.TextField()
+
+   def get_absolute_url(self):
+        return reverse('exercise_list', kwargs={'pk': self.post.pk})
+
    def __str__(self):
       return str(self.pk) + " " + self.title
    

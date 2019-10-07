@@ -1,35 +1,92 @@
 {% extends "tutorialsite/baseTutorial.html" %}
 
+{% block title %}
+Python Tutorial
+{% endblock title %}
 {% block content %}
-<h1>The Python Tutorial</h1>
-<p>Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple
-   but effective approach to object-oriented programming. Python&rsquo;s elegant syntax and dynamic typing, together
-   with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas
-   on most platforms.</p>
-<p>The Python interpreter and the extensive standard library are freely available in source or binary form for all major
-   platforms from the Python Web site,&nbsp;<a class="reference external"
-      href="https://www.python.org/">https://www.python.org/</a>, and may be freely distributed. The same site also
-   contains distributions of and pointers to many free third party Python modules, programs and tools, and additional
-   documentation.</p>
-<p>The Python interpreter is easily extended with new functions and data types implemented in C or C++ (or other
-   languages callable from C). Python is also suitable as an extension language for customizable applications.</p>
-<p>This tutorial introduces the reader informally to the basic concepts and features of the Python language and system.
-   It helps to have a Python interpreter handy for hands-on experience, but all examples are self-contained, so the
-   tutorial can be read off-line as well.</p>
-<p>For a description of standard objects and modules, see&nbsp;<a class="reference internal"
-      href="https://docs.python.org/3/library/index.html#library-index"><span class="std std-ref">The Python Standard
-         Library</span></a>.&nbsp;<a class="reference internal"
-      href="https://docs.python.org/3/reference/index.html#reference-index"><span class="std std-ref">The Python
-         Language Reference</span></a>&nbsp;gives a more formal definition of the language. To write extensions in C or
-   C++, read&nbsp;<a class="reference internal"
-      href="https://docs.python.org/3/extending/index.html#extending-index"><span class="std std-ref">Extending and
-         Embedding the Python Interpreter</span></a>&nbsp;and&nbsp;<a class="reference internal"
-      href="https://docs.python.org/3/c-api/index.html#c-api-index"><span class="std std-ref">Python/C API Reference
-         Manual</span></a>. There are also several books covering Python in depth.</p>
-<p>This tutorial does not attempt to be comprehensive and cover every single feature, or even every commonly used
-   feature. Instead, it introduces many of Python&rsquo;s most noteworthy features, and will give you a good idea of the
-   language&rsquo;s flavor and style. After reading it, you will be able to read and write Python modules and programs,
-   and you will be ready to learn more about the various Python library modules described in&nbsp;<a
-      class="reference internal" href="https://docs.python.org/3/library/index.html#library-index"><span
-         class="std std-ref">The Python Standard Library</span></a>.</p>
+<h2>Python l&agrave; g&igrave;?</h2>
+<p>Python&nbsp;l&agrave; một ng&ocirc;n ngữ lập tr&igrave;nh bậc cao cho c&aacute;c mục đ&iacute;ch lập tr&igrave;nh đa
+   năng, do Guido van Rossum tạo ra v&agrave; lần đầu ra mắt v&agrave;o năm 1911. Python được thiết kế với ưu điểm mạnh
+   l&agrave; dễ đọc, dễ học v&agrave; dễ nhớ. Python l&agrave; ng&ocirc;n ngữ c&oacute; h&igrave;nh thức rất s&aacute;ng
+   sủa, cấu tr&uacute;c r&otilde; r&agrave;ng, thuận tiện cho người mới học lập tr&igrave;nh. Cấu tr&uacute;c của Python
+   c&ograve;n cho ph&eacute;p người sử dụng viết m&atilde; lệnh với số lần g&otilde; ph&iacute;m tối
+   thiểu.&nbsp;V&agrave;o th&aacute;ng 7 năm 2018, Van Rossum đ&atilde; từ chức Leader trong cộng đồng ng&ocirc;n ngữ
+   Python sau 30 năm l&atilde;nh đạo.</p>
+<p>Python ho&agrave;n to&agrave;n tạo kiểu động&nbsp;v&agrave; d&ugrave;ng cơ chế cấp ph&aacute;t bộ nhớ tự động; do vậy
+   n&oacute; tương tự như Perl, Ruby, Scheme, Smalltalk, v&agrave; Tcl. Python được ph&aacute;t triển trong một dự
+   &aacute;n m&atilde; mở, do tổ chức phi lợi nhuận Python Software Foundation quản l&yacute;.</p>
+<p>Ban đầu, Python được ph&aacute;t triển để chạy tr&ecirc;n nền Unix. Nhưng rồi theo thời gian, Python dần mở rộng sang
+   mọi hệ điều h&agrave;nh từ MS-DOS đến MAC OS, OS/2, Windows, Linux v&agrave; c&aacute;c hệ điều h&agrave;nh
+   kh&aacute;c thuộc họ Unix. Mặc d&ugrave; sự ph&aacute;t triển của Python c&oacute; sự đ&oacute;ng g&oacute;p của rất
+   nhiều c&aacute; nh&acirc;n, nhưng Guido van Rossum hiện nay vẫn l&agrave; t&aacute;c giả chủ yếu của Python.
+   &Ocirc;ng giữ vai tr&ograve; chủ chốt trong việc quyết định hướng ph&aacute;t triển của Python.</p>
+<h2><span id="Đặc_điểm">Đặc điểm</span></h2>
+<p>Triết l&yacute; căn bản của ng&ocirc;n ngữ Python được tr&igrave;nh b&agrave;y trong t&agrave;i liệu&nbsp;The Zen of
+   Python (PEP 20), c&oacute; dạng thơ Haiku,&nbsp;t&oacute;m gọn như sau:</p>
+<ul>
+   <li>Đẹp đẽ tốt hơn xấu x&iacute;</li>
+   <li>Minh bạch tốt hơn che đậy</li>
+   <li>Đơn giản tốt hơn phức tạp</li>
+   <li>Phức tạp tốt hơn rắc rối</li>
+   <li>Dễ đọc</li>
+</ul>
+<h3><span id="D.E1.BB.85_h.E1.BB.8Dc.2C_d.E1.BB.85_.C4.91.E1.BB.8Dc"></span><span id="Dễ_học,_dễ_đọc">Dễ học, dễ
+      đọc</span></h3>
+<p>Python được thiết kế để trở th&agrave;nh một ng&ocirc;n ngữ dễ học, m&atilde; nguồn dễ đọc, bố cục trực quan, dễ
+   hiểu, thể hiện qua c&aacute;c điểm sau:</p>
+<h4><span id="T.E1.BB.AB_kh.C3.B3a"></span><span id="Từ_kh&oacute;a">Từ kh&oacute;a</span></h4>
+<ul>
+   <li>Python tăng cường sử dụng từ kh&oacute;a tiếng Anh, hạn chế c&aacute;c k&yacute; hiệu v&agrave; cấu tr&uacute;c
+      c&uacute; ph&aacute;p so với c&aacute;c ng&ocirc;n ngữ kh&aacute;c.</li>
+   <li>Python l&agrave; một ng&ocirc;n ngữ ph&acirc;n biệt kiểu chữ HOA, chữ thường.</li>
+   <li>Như C/C++, c&aacute;c từ kh&oacute;a của Python đều ở dạng chữ thường.</li>
+</ul>
+<p style="padding-left: 30px;">​</p>
+<table style="margin-left: 30px;">
+   <tbody style="padding-left: 30px;">
+      <tr style="padding-left: 30px;">
+         <td style="padding-left: 30px;">and</td>
+         <td style="padding-left: 30px;">del</td>
+         <td style="padding-left: 30px;">for</td>
+         <td style="padding-left: 30px;">is</td>
+         <td style="padding-left: 30px;">raise</td>
+      </tr>
+      <tr style="padding-left: 30px;">
+         <td style="padding-left: 30px;">assert</td>
+         <td style="padding-left: 30px;">elif</td>
+         <td style="padding-left: 30px;">from</td>
+         <td style="padding-left: 30px;">lambda</td>
+         <td style="padding-left: 30px;">return</td>
+      </tr>
+      <tr style="padding-left: 30px;">
+         <td style="padding-left: 30px;">break</td>
+         <td style="padding-left: 30px;">else</td>
+         <td style="padding-left: 30px;">global</td>
+         <td style="padding-left: 30px;">not</td>
+         <td style="padding-left: 30px;">try</td>
+      </tr>
+      <tr style="padding-left: 30px;">
+         <td style="padding-left: 30px;">class</td>
+         <td style="padding-left: 30px;">except</td>
+         <td style="padding-left: 30px;">if</td>
+         <td style="padding-left: 30px;">or</td>
+         <td style="padding-left: 30px;">while</td>
+      </tr>
+      <tr style="padding-left: 30px;">
+         <td style="padding-left: 30px;">continue</td>
+         <td style="padding-left: 30px;">exec</td>
+         <td style="padding-left: 30px;">import</td>
+         <td style="padding-left: 30px;">pass</td>
+         <td style="padding-left: 30px;">yield</td>
+      </tr>
+      <tr style="padding-left: 30px;">
+         <td style="padding-left: 30px;">def</td>
+         <td style="padding-left: 30px;">finally</td>
+         <td style="padding-left: 30px;">in</td>
+         <td style="padding-left: 30px;">print</td>
+      </tr>
+   </tbody>
+</table>
+<br><br>
+<h3><i>Các bài viết có nguồn từ Wikipedia, vietjack.com, python.org và topdev.vn.</i></h3>
 {% endblock content %}

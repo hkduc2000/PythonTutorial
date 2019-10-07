@@ -6,11 +6,12 @@
 
 {% block content %}
    <h3>{{ exercise_detail.title }}</h3>
-   <p>{{ exercise_detail.text|safe|linebreaksbr }}</p>
+   <p>{{ exercise_detail.text|safe|linebreaksbr }} </p>
    <button class="btn btn-info" onclick="toggleIt()">Show/hide Solution</button>
    
    <div id="toggleContent">
-      {{ exercise_detail.solution }}
+      <blockquote>{{ exercise_detail.solution|safe|linebreaksbr }}</blockquote>
+
    </div>
 
 
