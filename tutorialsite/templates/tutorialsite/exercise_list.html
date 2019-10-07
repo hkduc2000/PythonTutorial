@@ -5,9 +5,14 @@ Exercises - {{ post_detail.title }}
 {% endblock title %}
 
 {% block content %}
+<ol>
   {% for exercise in post_detail.exercises.all %}
-    <h3 style="display: inline-block;">{{ exercise.pk }}.</h3>
-    <a style="display: inline-block;" href="{% url 'exercise_detail' pk=exercise.pk %}"><h3>{{ exercise.title }}</h3></a>
-    <br>
+  <li>
+    <a href="{% url 'exercise_detail' pk=exercise.pk %}">
+      <h3>{{ exercise.title }}</h3>
+    </a>
+  </li>
   {% endfor %}
+</ol>
+
 {% endblock content %}for exercise in post_detail.exercises 
